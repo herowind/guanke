@@ -19,7 +19,7 @@ return [
     'database'        => 'guanke',
     // 用户名
     //'username'        => 'root',
-    'username'        => 'huzhu',
+    'username'        => 'huzhu', 
     // 密码
     //'password'        =>'',
     'password'        =>'1q2w3e4r!Q@W#E$R',
