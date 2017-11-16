@@ -109,14 +109,17 @@
 		}, 20000);
 
 		$(document).on("click", "#publishTopic", function() {
+			$("#video").hide();
 			$.prompt({
 				text : "",
 				title : "请输入您的问题",
 				onOK : function(text) {
 					$.alert("您的问题是:" + text, "提交成功");
+					$("#video").show();
 				},
 				onCancel : function() {
 					console.log("取消了");
+					$("#video").show();
 				},
 				input : ''
 			});
