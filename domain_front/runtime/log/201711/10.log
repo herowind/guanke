@@ -1,0 +1,47 @@
+---------------------------------------------------------------
+[ 2017-11-10T20:20:17+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ info ] admin.local.guanke.com/favicon.ico [运行时间：0.151009s][吞吐率：6.62req/s] [内存消耗：1,398.88kb] [文件加载：49]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'admin.local.guanke.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-10T20:20:18+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ info ] admin.local.guanke.com/ [运行时间：0.106204s][吞吐率：9.42req/s] [内存消耗：1,941.26kb] [文件加载：58]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'accept' => 'text/html, application/xhtml+xml, */*',
+  'accept-language' => 'zh-CN',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'admin.local.guanke.com',
+  'dnt' => '1',
+  'connection' => 'Keep-Alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] G:\workspace\guanke\domain_admin\application/passport/view\passport\login.html [ array (
+) ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File

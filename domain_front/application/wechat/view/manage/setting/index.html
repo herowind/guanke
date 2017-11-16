@@ -1,0 +1,31 @@
+{extend name="manage@template/iframe"/}
+{block name="body"}
+<div class="view-page">
+    <!-- 页面标题 -->
+    <div class="page-head">
+        <h6 class="padding-left page-head-title">绑定微信公众号
+        <span class="fr text-small text-normal padding-top"><b class="text-main">尚未绑定</b></span>
+        </h6>
+    </div>
+        
+    <div class="page-content">
+        <div class="non-info show">
+            <span class="text-green">点击扫码绑定公众号</span>
+        </div>
+    </div>
+
+
+</div>
+{/block}
+{block name="script"}
+<script>
+var $page = {};
+
+$(function(){
+	$(".status-btn").each(function(){
+        loadStatusBtn($(this));
+    })
+})
+
+</script>
+{/block}
