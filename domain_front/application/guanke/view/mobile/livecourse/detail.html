@@ -108,7 +108,6 @@
 		}, 20000);
 
 		$(document).on("click", "#publishTopic", function() {
-			vm.a++
 			$.prompt({
 				text : "",
 				title : "请输入您的问题",
@@ -118,7 +117,7 @@
 				onCancel : function() {
 					console.log("取消了");
 				},
-				input : vm.a
+				input : ''
 			});
 		});
 		

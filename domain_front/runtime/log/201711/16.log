@@ -7328,3 +7328,133 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-16T14:48:45+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ info ] www.local.guanke.net/favicon.ico [è¿è¡Œæ—¶é—´ï¼š0.262015s][ååç‡ï¼š3.82req/s] [å†…å­˜æ¶ˆè€—ï¼š1,248.84kb] [æ–‡ä»¶åŠ è½½ï¼š45]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.local.guanke.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=28558650.574795795078567040.1510398461570.6086; workspaceParam=index%7Cmanage.school%7Cguanke; PHPSESSID=27hnelicl4cr8pedu2uc7074il; monitor_count=637',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-16T15:20:33+08:00 ] 127.0.0.1 127.0.0.1 GET /guanke/mobile.livecourse/detail.html?id=1
+[ info ] www.local.guanke.net/guanke/mobile.livecourse/detail.html?id=1 [è¿è¡Œæ—¶é—´ï¼š22.319276s][ååç‡ï¼š0.04req/s] [å†…å­˜æ¶ˆè€—ï¼š3,064.26kb] [æ–‡ä»¶åŠ è½½ï¼š69]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.local.guanke.net',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=28558650.574795795078567040.1510398461570.6086; workspaceParam=index%7Cmanage.school%7Cguanke; PHPSESSID=27hnelicl4cr8pedu2uc7074il; monitor_count=637',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓĞÕıÈ·´ğ¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓĞ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[G:\workspace\guanke\framework\library\think\db\Connection.php:479]
+---------------------------------------------------------------
+[ 2017-11-16T15:21:07+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ info ] www.local.guanke.net/favicon.ico [è¿è¡Œæ—¶é—´ï¼š0.878050s][ååç‡ï¼š1.14req/s] [å†…å­˜æ¶ˆè€—ï¼š1,248.87kb] [æ–‡ä»¶åŠ è½½ï¼š45]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.local.guanke.net',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=28558650.574795795078567040.1510398461570.6086; workspaceParam=index%7Cmanage.school%7Cguanke; PHPSESSID=27hnelicl4cr8pedu2uc7074il; monitor_count=639',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-16T15:21:10+08:00 ] 127.0.0.1 127.0.0.1 GET /guanke/mobile.livecourse/detail.html?id=2
+[ info ] www.local.guanke.net/guanke/mobile.livecourse/detail.html?id=2 [è¿è¡Œæ—¶é—´ï¼š21.119208s][ååç‡ï¼š0.05req/s] [å†…å­˜æ¶ˆè€—ï¼š3,064.30kb] [æ–‡ä»¶åŠ è½½ï¼š69]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.local.guanke.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.local.guanke.net/guanke/mobile.home/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=28558650.574795795078567040.1510398461570.6086; workspaceParam=index%7Cmanage.school%7Cguanke; PHPSESSID=27hnelicl4cr8pedu2uc7074il; monitor_count=639',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓĞÕıÈ·´ğ¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓĞ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[G:\workspace\guanke\framework\library\think\db\Connection.php:479]
+---------------------------------------------------------------
+[ 2017-11-16T15:21:12+08:00 ] 127.0.0.1 127.0.0.1 GET /guanke/mobile.livecourse/detail.html?id=2
+[ info ] www.local.guanke.net/guanke/mobile.livecourse/detail.html?id=2 [è¿è¡Œæ—¶é—´ï¼š21.201212s][ååç‡ï¼š0.05req/s] [å†…å­˜æ¶ˆè€—ï¼š3,064.34kb] [æ–‡ä»¶åŠ è½½ï¼š69]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.local.guanke.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.local.guanke.net/guanke/mobile.home/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=28558650.574795795078567040.1510398461570.6086; workspaceParam=index%7Cmanage.school%7Cguanke; PHPSESSID=27hnelicl4cr8pedu2uc7074il; monitor_count=639',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓĞÕıÈ·´ğ¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓĞ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[G:\workspace\guanke\framework\library\think\db\Connection.php:479]
+---------------------------------------------------------------
+[ 2017-11-16T15:21:13+08:00 ] 127.0.0.1 127.0.0.1 GET /guanke/mobile.livecourse/detail.html?id=2
+[ info ] www.local.guanke.net/guanke/mobile.livecourse/detail.html?id=2 [è¿è¡Œæ—¶é—´ï¼š21.207213s][ååç‡ï¼š0.05req/s] [å†…å­˜æ¶ˆè€—ï¼š3,064.34kb] [æ–‡ä»¶åŠ è½½ï¼š69]
+[ info ] [ LANG ] G:\workspace\guanke\framework/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.local.guanke.net',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'referer' => 'http://www.local.guanke.net/guanke/mobile.home/index.html',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => '__guid=28558650.574795795078567040.1510398461570.6086; workspaceParam=index%7Cmanage.school%7Cguanke; PHPSESSID=27hnelicl4cr8pedu2uc7074il; monitor_count=639',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÁ¬½Ó·½ÔÚÒ»¶ÎÊ±¼äºóÃ»ÓĞÕıÈ·´ğ¸´»òÁ¬½ÓµÄÖ÷»úÃ»ÓĞ·´Ó¦£¬Á¬½Ó³¢ÊÔÊ§°Ü¡£
+[G:\workspace\guanke\framework\library\think\db\Connection.php:479]

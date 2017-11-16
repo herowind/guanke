@@ -521,3 +521,8 @@ a{
         display: block;
         width: 100%;
       }
+      
+      .
+.weui-footer_fixed-bottom{
+	bottom:0;
+}
