@@ -13,7 +13,9 @@
 // | 应用设置
 // +----------------------------------------------------------------------
 return [
-    'fullpath' => 'G:/workspace/guanke/uploads',
-    'domain' => 'http://upload.local.guanke.net',
+    //'fullpath' => 'G:/workspace/guanke/uploads',
+    //'domain' => 'http://upload.local.guanke.net',
+	'fullpath' => 'd:/www/guanke/uploads',
+	'domain' => 'http://uploadguanke.qyhzlm.com',
 ]
 ;
