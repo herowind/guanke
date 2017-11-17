@@ -8,13 +8,12 @@ $options = [
     	'file'=>'wechat.log',
     		'level' => 'debug',
     ],
-    'open_platform' => [
+
         'app_id'   => 'wxa82d282aef3dcffa',
         'secret'   => 'b61138219385c9152e59a513b9f298a7',
         'token'    => 'guanke',
         'aes_key'  => 'KXLT0BdLBTsWx637REQLUFRTOmMqPrastrGqimyMc8n'
-        ],
-    // ...
+
     ];
 
 $openPlatform = Factory::openPlatform($options);
