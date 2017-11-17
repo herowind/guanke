@@ -1,4 +1,15 @@
-{extend name="mobile@template/common"/} {block name="body"}
+{extend name="mobile@template/common"/} 
+{block name="style"}
+<style>
+.weui-footer_fixed-bottom {
+    bottom: 0;
+}
+.weui-tab{
+	border-top:#999;
+}
+</style>
+{/block}
+{block name="body"}
 <div class="course-hd">
 	<div class="course-camera">
 		<video id="video" class="video" x5-playsinline="" playsinline="" webkit-playsinline="" src="http://alhlscdn.lechange.cn/LCL/2E02899PAU00618/0/0/20170111130549/dev_20170111130549_5iexhpdk3nkll4bc.m3u8" poster="{$detail.course.banner}" controls="controls" width="100%" style=""></video>

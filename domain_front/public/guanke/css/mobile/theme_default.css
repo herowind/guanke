@@ -513,16 +513,15 @@ a{
   -webkit-line-clamp: 5;
 }
 
-      .swiper-container {
-        width: 100%;
-      } 
+.swiper-container {
+  width: 100%;
+} 
 
-      .swiper-container img {
-        display: block;
-        width: 100%;
-      }
-      
+.swiper-container img {
+  display: block;
+  width: 100%;
+}
       .
 .weui-footer_fixed-bottom{
-	bottom:0;
+	bottom:0px;
 }
