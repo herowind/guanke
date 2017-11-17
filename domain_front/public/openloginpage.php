@@ -1,6 +1,7 @@
 <?php
 include __DIR__ . '/../extend/EasyWechat/vendor/autoload.php';
 use EasyWeChat\Factory;
+use EasyWeChat\OpenPlatform\Auth\VerifyTicket;
 
 $options = [
     'log'=>[
@@ -17,8 +18,9 @@ $options = [
     ];
 
 $openPlatform = Factory::openPlatform($options);
-$verify_ticket = $openPlatform['verify_ticket']->getTicket();
-$openPlatform['logger']->debug('Easywechat:',['ticket'=>$verify_ticket]);
+$verifyTicket = new VerifyTicket($options['open_platform']['app_id']);
+$verify_ticket =$verifyTicket->getTicket();
+$openPlatform['logger']->debug('Easywechat_ticket:',['ticket'=>$verify_ticket]);
 
 $url = $openPlatform->getPreAuthorizationUrl('http://guanke.qyhzlm.com/openwechat.php');
 $openPlatform['logger']->debug('Easywechat:',['openloginpage'=>$url]);

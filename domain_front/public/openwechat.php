@@ -2,6 +2,7 @@
 include __DIR__ . '/../extend/EasyWechat/vendor/autoload.php';
 use EasyWeChat\OpenPlatform\Server\Guard;
 use EasyWeChat\Factory;
+use EasyWeChat\OpenPlatform\Auth\VerifyTicket;
 
 $options = [
     'log'=>[
@@ -18,7 +19,6 @@ $options = [
     ];
 
 $openPlatform = Factory::openPlatform($options);
-$openPlatform['logger']->debug('Easywechat:',['1111']);
 $server = $openPlatform->server;
 
 //$server['logger']->debug('Request received:','1111');
@@ -38,7 +38,8 @@ $server->push(function ($message) {
 	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理授权取消事件']);
 }, Guard::EVENT_UNAUTHORIZED);
 	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理其他时间']);
-$verify_ticket = $openPlatform['verify_ticket']->getTicket();
+	$verifyTicket = new VerifyTicket($options['open_platform']['app_id']);
+$verify_ticket =$verifyTicket->getTicket();
 $openPlatform['logger']->debug('Easywechat_ticket:',['ticket'=>$verify_ticket]);
 return $server->serve();
 
