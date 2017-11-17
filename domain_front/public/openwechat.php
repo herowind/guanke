@@ -9,18 +9,17 @@ $options = [
     	'file'=>'wechat.log',
     		'level' => 'debug',
     ],
-    'open_platform' => [
         'app_id'   => 'wxa82d282aef3dcffa',
         'secret'   => 'b61138219385c9152e59a513b9f298a7',
         'token'    => 'guanke',
         'aes_key'  => 'KXLT0BdLBTsWx637REQLUFRTOmMqPrastrGqimyMc8n'
-        ],
-    // ...
+
     ];
 
 $openPlatform = Factory::openPlatform($options);
 $server = $openPlatform->server;
-
+$openPlatform['logger']->debug('Easywechat:',['开始接受']);
+return $server->serve();
 //$server['logger']->debug('Request received:','1111');
 
 // 处理授权成功事件
@@ -41,5 +40,5 @@ $server->push(function ($message) {
 	$verifyTicket = new VerifyTicket($options['open_platform']['app_id']);
 $verify_ticket =$verifyTicket->getTicket();
 $openPlatform['logger']->debug('Easywechat_ticket:',['ticket'=>$verify_ticket]);
-return $server->serve();
+
 
