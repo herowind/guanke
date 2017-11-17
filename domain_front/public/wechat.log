@@ -1,0 +1,6 @@
+[2017-11-17 15:00:48] easywechat.openplatform.application.DEBUG: Easywechat: ["1111"] []
+[2017-11-17 15:00:48] easywechat.openplatform.application.DEBUG: Request received: {"method":"GET","uri":"http://www.local.guanke.net/openwechat.php/","content-type":null,"content":""} []
+[2017-11-17 15:00:48] easywechat.openplatform.application.DEBUG: Server response created: {"content":"success"} []
+[2017-11-17 15:00:50] easywechat.openplatform.application.DEBUG: Easywechat: ["1111"] []
+[2017-11-17 15:00:50] easywechat.openplatform.application.DEBUG: Request received: {"method":"GET","uri":"http://www.local.guanke.net/openwechat.php/","content-type":null,"content":""} []
+[2017-11-17 15:00:50] easywechat.openplatform.application.DEBUG: Server response created: {"content":"success"} []
