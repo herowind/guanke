@@ -41,7 +41,8 @@ class VerifyTicketRefreshed implements EventHandlerInterface
      */
     public function handle(array $payload = [])
     {
-        if (!empty($payload['ComponentVerifyTicket'])) {
+        $this->app['logger']->debug('openplatform[verify_ticket]:',$payload);
+    	if (!empty($payload['ComponentVerifyTicket'])) {
             $this->app['verify_ticket']->setTicket($payload['ComponentVerifyTicket']);
         }
     }
