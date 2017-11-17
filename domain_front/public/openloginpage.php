@@ -17,8 +17,10 @@ $options = [
     ];
 
 $openPlatform = Factory::openPlatform($options);
-
+$verify_ticket = $openPlatform['verify_ticket']->getTicket();
+$openPlatform['logger']->debug('Easywechat:',['ticket'=>$verify_ticket]);
 
 $url = $openPlatform->getPreAuthorizationUrl('http://guanke.qyhzlm.com/openwechat.php');
 $openPlatform['logger']->debug('Easywechat:',['openloginpage'=>$url]);
+
 header("Location: $url");

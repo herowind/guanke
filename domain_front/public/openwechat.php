@@ -38,5 +38,7 @@ $server->push(function ($message) {
 	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理授权取消事件']);
 }, Guard::EVENT_UNAUTHORIZED);
 	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理其他时间']);
+$verify_ticket = $openPlatform['verify_ticket']->getTicket();
+$openPlatform['logger']->debug('Easywechat_ticket:',['ticket'=>$verify_ticket]);
 return $server->serve();
 
