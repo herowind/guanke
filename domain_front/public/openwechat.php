@@ -29,7 +29,7 @@ $server->push(function ($message) use ($openPlatform){
 $server->push(function ($message) use ($openPlatform){
    $openPlatform['logger']->debug('Easywechat:',['msg'=>$message]);
 }, Guard::EVENT_UPDATE_AUTHORIZED);
-
+ 
 // 处理授权取消事件
 $server->push(function ($message) use ($openPlatform){
    $ch = curl_init(); 
