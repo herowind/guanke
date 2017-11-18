@@ -35,7 +35,8 @@
 				<td>{$detail.authorizer_info.verify_type_info}</td>
 				<td>{$detail.create_time}</td>
 				<td class="text-center">
-					<button class="btn btn-xs btn-warning linkto-btn" data-url="{$url} ><i class="fa fa-trash"></i> 解除绑定</button>&nbsp; 
+				<a class="text-mix confirm-rst-url-btn btn btn-xs btn-default" href="remove.html?id={$item.cid}" data-info="你确定要删除吗？" title="删除"><i class="fa fa-trash"></i> 删除绑定</a>&nbsp;
+
 				</td>
 			</tr>
 		</tbody>
