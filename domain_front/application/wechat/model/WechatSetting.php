@@ -32,28 +32,34 @@ class WechatSetting extends CommonMod
 				case '2':
 					$atthinfo['service_type_info'] = '服务号';
 					break;
+				default:
+					$atthinfo['service_type_info'] = '审核中';
+					break;
 			}
 			switch($atthinfo['verify_type_info']['id']){
 				case '-1':
-					$atthinfo['service_type_info'] = '未认证';
+					$atthinfo['verify_type_info'] = '未认证';
 					break;
 				case '0':
-					$atthinfo['service_type_info'] = '微信认证';
+					$atthinfo['verify_type_info'] = '微信认证';
 					break;
 				case '1':
-					$atthinfo['service_type_info'] = '新浪微博认证';
+					$atthinfo['verify_type_info'] = '新浪微博认证';
 					break;
 				case '2':
-					$atthinfo['service_type_info'] = '腾讯微博认证';
+					$atthinfo['verify_type_info'] = '腾讯微博认证';
 					break;
 				case '3':
-					$atthinfo['service_type_info'] = '未通过名称认证';
+					$atthinfo['verify_type_info'] = '未通过名称认证';
 					break;
 				case '4':
-					$atthinfo['service_type_info'] = '新浪微博认证';
+					$atthinfo['verify_type_info'] = '新浪微博认证';
 					break;
 				case '5':
-					$atthinfo['service_type_info'] = '腾讯微博认证';
+					$atthinfo['verify_type_info'] = '腾讯微博认证';
+					break;
+				default:
+					$atthinfo['verify_type_info'] = '未知';
 					break;
 			}
 		}else{
