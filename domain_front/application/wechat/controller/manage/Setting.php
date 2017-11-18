@@ -31,7 +31,7 @@ class Setting extends WechatController
     public function index()
     {
     	$detail = WechatSetting::get($this->getCid());
-    	$url = $this->openPlatform->getPreAuthorizationUrl($_SERVER['HTTP_HOST'].'/wechat/manage.setting/save.html');
+    	$url = $this->openPlatform->getPreAuthorizationUrl('http://'.$_SERVER['HTTP_HOST'].'/wechat/manage.setting/save.html');
     	$this->assign('url',$url);
     	$this->assign('detail',$detail);
         return $this->fetch();
