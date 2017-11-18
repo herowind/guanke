@@ -18,9 +18,6 @@ $options = [
 
 $openPlatform = Factory::openPlatform($options);
 $server = $openPlatform->server;
-$openPlatform['logger']->debug('Easywechat:',['开始接受']);
-return $server->serve();
-//$server['logger']->debug('Request received:','1111');
 
 // 处理授权成功事件
 $server->push(function ($message) {
@@ -36,9 +33,11 @@ $server->push(function ($message) {
 $server->push(function ($message) {
 	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理授权取消事件']);
 }, Guard::EVENT_UNAUTHORIZED);
-	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理其他时间']);
-	$verifyTicket = new VerifyTicket($options['open_platform']['app_id']);
+
+$verifyTicket = new VerifyTicket($options['app_id']);
 $verify_ticket =$verifyTicket->getTicket();
-$openPlatform['logger']->debug('Easywechat_ticket:',['ticket'=>$verify_ticket]);
+$openPlatform['logger']->debug('旧的ticket:',['ticket'=>$verify_ticket]);
+
+return $server->serve();
 
 
