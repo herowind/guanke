@@ -53,7 +53,7 @@ class Setting extends WechatController
     	$setting = [
     		'cid' => $this->getCid(),
     		'name' => $authorizer['authorizer_info']['nick_name'],
-    		'appid'=> $authInfo['authorizer_appid'],
+    		'appid'=> $authInfo['authorization_info']['authorizer_appid'],
     		'authorizer_info' =>json_encode($authorizer['authorizer_info'],JSON_UNESCAPED_UNICODE),
     		'component_appid' =>config('wechat.component.app_id'),
     		'authorizer_refresh_token' =>$authInfo['authorizer_refresh_token'],
