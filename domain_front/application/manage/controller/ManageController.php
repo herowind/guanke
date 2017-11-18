@@ -20,7 +20,7 @@ use app\common\service\UploadSvc;
 
 class ManageController extends BaseController{
 	protected $user;
-	
+
 	/**
 	 * 描述：全局初始化
 	 */

@@ -14,9 +14,7 @@
 // +----------------------------------------------------------------------
 namespace app\wechat\controller\manage;
 
-use app\manage\controller\ManageController; 
-
-class Setting extends ManageController
+class Setting extends WechatController
 {
 
     public function initialize()
@@ -29,7 +27,13 @@ class Setting extends ManageController
      */
     public function index()
     {
+    	$url = $this->openPlatform->getPreAuthorizationUrl($_SERVER['HTTP_HOST'].'/manage.setting/save.html');
+    	$this->assign('url',$url);
         return $this->fetch();
+    }
+    
+    public function save(){
+    	
     }
 
     /**

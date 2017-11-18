@@ -13,6 +13,9 @@
 // | 应用设置
 // +----------------------------------------------------------------------
 return [  
+		'root_namespace' => [
+				'EasyWechat'  => '../extend/EasyWechat/src/',
+		],
     // 应用调试模式
     'app_debug' => true,
     // 应用Trace
