@@ -20,18 +20,18 @@ $openPlatform = Factory::openPlatform($options);
 $server = $openPlatform->server;
 
 // 处理授权成功事件
-$server->push(function ($message) {
-	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理授权成功事件']);
+$server->push(function ($message) use ($openPlatform){
+	$openPlatform['logger']->debug('Easywechat:',['msg'=>$message]);
 }, Guard::EVENT_AUTHORIZED);
 
 // 处理授权更新事件
-$server->push(function ($message) {
-	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理授权更新事件']);
+$server->push(function ($message) use ($openPlatform){
+	$openPlatform['logger']->debug('Easywechat:',['msg'=>$message]);
 }, Guard::EVENT_UPDATE_AUTHORIZED);
 
 // 处理授权取消事件
-$server->push(function ($message) {
-	$openPlatform['logger']->debug('Easywechat:',['msg'=>'处理授权取消事件']);
+$server->push(function ($message) use ($openPlatform){
+	$openPlatform['logger']->debug('Easywechat:',['msg'=>$message]);
 }, Guard::EVENT_UNAUTHORIZED);
 
 $verifyTicket = new VerifyTicket($options['app_id']);
