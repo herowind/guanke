@@ -74,7 +74,7 @@ class Setting extends WechatController
     public function remove()
     {
         $params = $this->request->param();
-        $flag = WechatSetting::delete($this->getCid(),true);
+        $flag = WechatSetting::destroy($this->getCid(),true);
         if ($flag == 1) {
             return $this->success('删除成功');
         } else {
