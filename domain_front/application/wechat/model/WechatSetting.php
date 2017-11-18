@@ -19,7 +19,7 @@ use app\manage\model\CommonMod;
 class WechatSetting extends CommonMod
 {
     protected $pk = 'cid';
-	public function getAuthorizerInfo($value,$data){
+	public function getAuthorizerInfoAttr($value,$data){
         return json_decode($value,true);
     }
     
