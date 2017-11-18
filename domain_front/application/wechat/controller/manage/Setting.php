@@ -14,6 +14,9 @@
 // +----------------------------------------------------------------------
 namespace app\wechat\controller\manage;
 
+use function GuzzleHttp\json_encode;
+use app\wechat\model\WechatSetting;
+
 class Setting extends WechatController
 {
 
@@ -27,13 +30,42 @@ class Setting extends WechatController
      */
     public function index()
     {
+    	$detail = WechatSetting::get($this->getCid());
     	$url = $this->openPlatform->getPreAuthorizationUrl($_SERVER['HTTP_HOST'].'/manage.setting/save.html');
     	$this->assign('url',$url);
+    	$this->assign('detail',$detail);
         return $this->fetch();
     }
     
     public function save(){
+    	/**
+    	 * "authorization_info": {
+		 * "authorizer_appid": "wxf8b4f85f3a794e77", 
+		 * "authorizer_access_token": "QXjUqNqfYVH0yBE1iI_7vuN_9gQbpjfK7hYwJ3P7xOa88a89-Aga5x1NMYJyB8G2yKt1KCl0nPC3W9GJzw0Zzq_dBxc8pxIGUNi_bFes0qM", 
+		 * "expires_in": 7200, 
+		 * "authorizer_refresh_token": "dTo-YCXPL4llX-u1W1pPpnp8Hgm4wpJtlR6iV0doKdY", 
+    	 * @var unknown
+    	 */
+    	$authInfo = $this->openPlatform->handleAuthorize();
+    	$this->openPlatform['logger']->debug('ComponentWechat:',['authInfo'=>$authInfo]);
     	
+    	$authorizer = $this->openPlatform->getAuthorizer($authInfo['authorizer_appid']);
+    	$this->openPlatform['logger']->debug('ComponentWechat:',['authorizer'=>$authorizer]);
+    	$setting = [
+    		'cid' => $this->getCid(),
+    		'name' => $authorizer['authorizer_info']['nick_name'],
+    		'appid'=> $authInfo['authorizer_appid'],
+    		'authorizer_info' =>json_encode($authorizer['authorizer_info'],JSON_UNESCAPED_UNICODE),
+    		'component_appid' =>config('wechat.component.app_id'),
+    		'authorizer_refresh_token' =>$authInfo['authorizer_refresh_token'],
+    	];
+    	$detail = WechatSetting::get($this->getCid());
+    	if(empty($detail)){
+    		WechatSetting::create($setting);
+    	}else{
+    		$detail->save($setting);
+    	}
+    	$this->redirect('index');
     }
 
     /**

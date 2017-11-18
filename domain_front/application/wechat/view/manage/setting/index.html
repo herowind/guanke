@@ -1,31 +1,53 @@
-{extend name="manage@template/iframe"/}
+{extend name="manage@template/iframe"/} 
 {block name="body"}
 <div class="view-page">
-    <!-- 页面标题 -->
-    <div class="page-head">
-        <h6 class="padding-left page-head-title">绑定微信公众号
-        <span class="fr text-small text-normal padding-top"><b class="text-main">尚未绑定</b></span>
-        </h6>
-    </div>
-        
-    <div class="page-content">
-        <div class="non-info show">
-            <button class="btn btn-lg btn-success linkto-btn" data-url="{$url}">  绑定公众号   </button>
-        </div>
-    </div>
-
-
+	<!-- 页面标题 -->
+	<div class="page-head">
+		<h6 class="padding-left page-head-title">
+			绑定微信公众号 <span class="fr text-small text-normal padding-top"><b class="text-main">尚未绑定</b></span>
+		</h6>
+	</div>
+	{notempty name="detail"}
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th class=" w5 text-center"><input type="checkbox" /></th>
+				<th class=" w35 ">公众号名称</th>
+				<th class=" w10 ">微信号</th>
+				<th class=" w10 ">原始ID</th>
+				<th class=" w10 ">类型</th>
+				<th class=" w10 ">认账状态</th>
+				<th class=" w10">绑定日期</th>
+				<th class=" w20 text-center">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-center"><input class="margin-top-20" type="checkbox" /></td>
+				<td><img src="{$detail.authorizer_info.head_img}" width="60" height="60">{$detail.name}</td>
+				<td>{$detail.authorizer_info.alias}</td>
+				<td>{$detail.authorizer_info.user_name}</td>
+				<td>{$detail.service_type_info}</td>
+				<td>{$detail.verify_type_info}</td>
+				<td>{$detail.create_time}</td>
+				<td class="text-center">
+					<button class="btn btn-xs btn-warning linkto-btn" data-url="{$url} ><i class="fa fa-trash"></i> 解除绑定</button>&nbsp; 
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	{/notempty}
+	{empty name="detail"}
+	<div class="page-content">
+		<div class="non-info show">
+			<button class="btn btn-lg btn-success linkto-btn" data-url="{$url}">绑定公众号</button>
+		</div>
+	</div>
+	{/empty}
 </div>
-{/block}
+{/block} 
 {block name="script"}
 <script>
-var $page = {};
-
-$(function(){
-	$(".status-btn").each(function(){
-        loadStatusBtn($(this));
-    })
-})
 
 </script>
 {/block}
