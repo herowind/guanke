@@ -14,9 +14,7 @@
 // +----------------------------------------------------------------------
 namespace app\wechat\controller\manage;
 
-use function GuzzleHttp\json_encode;
 use app\wechat\model\WechatSetting;
-use function GuzzleHttp\delete;
 
 class Setting extends WechatController
 {
