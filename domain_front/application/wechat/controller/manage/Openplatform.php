@@ -17,7 +17,7 @@ namespace app\wechat\controller\manage;
 use app\wechat\model\WechatSetting;
 use app\common\controller\BaseController;
 
-class Setting extends BaseController
+class Openplatform extends BaseController
 {
 
     public function initialize()
