@@ -48,8 +48,9 @@ class Setting extends WechatController
     	 */
     	$authInfo = $this->openPlatform->handleAuthorize();
     	$this->openPlatform['logger']->debug('ComponentWechat:',['authInfo'=>$authInfo]);
-    	
-    	$authorizer = $this->openPlatform->getAuthorizer($authInfo['authorizer_appid']);
+    	$authInfo = json_decode($authInfo,true);
+    	$authorizer = $this->openPlatform->getAuthorizer($authInfo['authorization_info']['authorizer_appid']);
+    	$authorizer = json_decode($authorizer,true);
     	$this->openPlatform['logger']->debug('ComponentWechat:',['authorizer'=>$authorizer]);
     	$setting = [
     		'cid' => $this->getCid(),
