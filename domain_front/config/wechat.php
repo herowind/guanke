@@ -23,6 +23,8 @@ return [
 						'callback' => 'http://guanke.qyhzlm.com/mobile/passport/loginwx.html',
 						
 				],
+				'scopes'   => ['snsapi_userinfo'],
+				'callback' => 'http://guanke.qyhzlm.com/mobile/passport/loginwx.html',
 				'app_id' => 'wxa82d282aef3dcffa',
 				'secret' => 'b61138219385c9152e59a513b9f298a7',
 				'token' => 'guanke',
