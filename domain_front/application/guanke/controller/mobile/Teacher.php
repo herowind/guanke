@@ -10,32 +10,32 @@
 // +----------------------------------------------------------------------
 
 // +----------------------------------------------------------------------
-// | 直播课程页面
+// | 教师页面
 // +----------------------------------------------------------------------
 namespace app\guanke\controller\mobile;
 
-use app\guanke\model\GuankeLivecourse;
+use app\guanke\model\GuankeTeacher;
 
-class Livecourse extends SchoolController {
+class Teacher extends SchoolController {
 	public function initialize() {
 		parent::initialize ();
 	}
 	
 	/**
-	 * 直播课程详细页
+	 * 教师详细页面
 	 */
 	public function detail(){
-		$course_id = $this->request->param('course_id');
-		$detail = GuankeLivecourse::find($course_id);
+		$teacher_id = $this->request->param('teacher_id');
+		$detail = GuankeTeacher::find($teacher_id);
 		$this->assign('detail',$detail);
 		return $this->fetch ();
 	}
 	
 	/**
-	 * 直播课程列表页
+	 * 教师列表页
 	 */
 	public function lists(){
-		$list = GuankeLivecourse::where('cid',$this->getCid())->where('isdisplay',1)->select();
+		$list = GuankeTeacher::where('cid',$this->getCid())->where('isdisplay',1)->select();
 		return ['code'=>1,'msg'=>'查询成功','data'=>$list];
 	}
 }

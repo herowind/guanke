@@ -15,15 +15,32 @@
 namespace app\mobile\service;
 
 use think\facade\App;
-use com\utils\FncCommon;
-use com\utils\FncCrypt;
-use app\manage\model\User;
+use app\manage\model\UserMember;
 
 class MobileLoginSvc
 {
     // 微信登录
-    public static function doLoginwx(){
-        
+    public static function doLoginwx($openid){
+        $detail = UserMember::where('openid',$openid)->find();
+        if(empty($detail)){
+        	return [
+        			'code' => -1,
+        			'msg' => '账号信息不存在'
+        	];
+        }
+        $isLogin = self::setSession($detail->id);
+        if ($isLogin) {
+        	return [
+        			'code' => 1,
+        			'msg' => '登陆成功',
+        			'data' => $detail->id
+        	];
+        } else {
+        	return [
+        			'code' => 0,
+        			'msg' => '系统异常，请稍后重试'
+        	];
+        }
     }
     
     // 账号登录
@@ -36,7 +53,7 @@ class MobileLoginSvc
             ];
         }
         
-        $detail = User::where('username', $username)->find();
+        $detail = UserMember::where('username', $username)->find();
         
         // 验证密码
         if (empty($detail) || $detail->password != $password) {
@@ -76,28 +93,21 @@ class MobileLoginSvc
      * @param string $isSys            
      * @return boolean
      */
-    public static function setSession($id, $isSys = false)
+    public static function setSession($id)
     {
-        $detail = User::field('id,username,pid,avatar,mobile')->where('id', $id)->find();
-        if (! $isSys) {
-            // 更新登录信息
-            $detail->last_login_time = time();
-            $detail->last_login_ip = FncCommon::getClientIp();
-            $detail->save();
-        }
-        
-        session(SES_MANAGER_AUTH, $detail);
-        session(SES_MANAGER_AUTH_SIGN, FncCrypt::dataAuthSign($detail));
+        $detail = UserMember::field('id,cid,nickname,avatar,mobile')->where('id', $id)->find();       
+        session('member'.$detail['cid'], $detail);
+        //session('membersign'.$detail['cid'], FncCrypt::dataAuthSign($detail));
         return true;
     }
 
     /**
      * 获得session
      */
-    public static function getSession()
+    public static function getSession($cid)
     {
-        $user = session(SES_MANAGER_AUTH);
-        return $user;
+        $detail = session('member'.$cid);
+        return $detail;
     }
 
     /**
@@ -105,40 +115,14 @@ class MobileLoginSvc
      * 
      * @return number
      */
-    public static function isLogin()
+    public static function isLogin($cid)
     {
-        $user = session(SES_MANAGER_AUTH);
-        if (empty($user)) {
+        $detail = session('member'.$cid);
+        if (empty($detail)) {
             return 0;
         } else {
-            return session(SES_MANAGER_AUTH_SIGN) == FncCrypt::dataAuthSign($user) ? $user->id : 0;
+            return $detail->id;
         }
-    }
-
-    public static function getCid()
-    {
-        $user = session(SES_MANAGER_AUTH);
-        if (empty($user)) {
-            return 0;
-        } else {
-            if ($user->pid > 0) {
-                return $user->pid;
-            } else {
-                return $user->id;
-            }
-        }
-    }
-
-    /**
-     * 获得登陆用户菜单
-     * 
-     * @return array
-     */
-    public static function getMenu()
-    {
-        $loginUser = session(SES_MANAGER_AUTH);
-        $menuArr = include App::getConfigPath() . 'manage/menu.php';
-        return $menuArr;
     }
 	
 	/**

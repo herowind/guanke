@@ -10,32 +10,20 @@
 // +----------------------------------------------------------------------
 
 // +----------------------------------------------------------------------
-// | 直播课程页面
+// | 用户主页面
 // +----------------------------------------------------------------------
 namespace app\guanke\controller\mobile;
 
-use app\guanke\model\GuankeLivecourse;
-
-class Livecourse extends SchoolController {
+class Member extends SchoolController {
 	public function initialize() {
 		parent::initialize ();
 	}
 	
 	/**
-	 * 直播课程详细页
+	 * 会员主页
 	 */
-	public function detail(){
-		$course_id = $this->request->param('course_id');
-		$detail = GuankeLivecourse::find($course_id);
-		$this->assign('detail',$detail);
+	public function index() {
+		
 		return $this->fetch ();
-	}
-	
-	/**
-	 * 直播课程列表页
-	 */
-	public function lists(){
-		$list = GuankeLivecourse::where('cid',$this->getCid())->where('isdisplay',1)->select();
-		return ['code'=>1,'msg'=>'查询成功','data'=>$list];
 	}
 }

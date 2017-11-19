@@ -20,7 +20,6 @@ use EasyWeChat\Factory;
 use app\manage\controller\ManageController;
 
 class WechatController extends ManageController{
-	protected $user;
 	protected $openPlatform;
 	/**
 	 * 描述：全局初始化

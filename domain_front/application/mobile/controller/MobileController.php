@@ -14,14 +14,17 @@
 // +----------------------------------------------------------------------
 namespace app\mobile\controller;
 
-use app\common\controller\BaseController;
-use app\manage\service\ManagerLoginSvc;
-use app\common\service\UploadSvc;
+use EasyWeChat\Factory;
+use app\mobile\service\MobileLoginSvc;
+use app\wechat\model\WechatSetting;
+use app\common\controller\MobileBaseController;
 
-class MobileController extends BaseController{
+class MobileController extends MobileBaseController{
 	protected $pageTitle = '官网';
 	protected $member;
 	protected $theme = 'default';//暂时未用
+	//init之后才可以调用$officialAccount
+	protected $officialAccount;
 	
 	/**
 	 * 描述：全局初始化
@@ -49,35 +52,46 @@ class MobileController extends BaseController{
 	 * 获得公司CID
 	 */
 	protected function getCid(){
-	    return $this->member->cid;
+		$cid = cookie('currentCid');
+		if($cid){
+			return $cid;
+		}else{
+			$this->error('操作异常，请开启客户端cookie');	
+		}
 	}
 	
 	/**
 	 * 验证登录状态
 	 */
-	protected function checkLogin(){
-	    $this->user = ManagerLoginSvc::getSession();
-	    if(empty($this->user)){
-	        $this->error('您尚未登录',config('manage.website.login'));
+	protected function initMember(){
+	    $this->member = MobileLoginSvc::getSession($this->getCid());
+	    if(empty($this->member)){
+	    	if($this->request->isAjax()){
+	    		$this->error('您尚未登录','/mobile/passport/login');
+	    	}else{
+	    		$this->initOfficialAccount();
+	    		if($this->officialAccount){
+	    			//微信授权开始
+	    			$oauth = $this->officialAccount->oauth;
+	    			$oauth->redirect();
+	    		}else{
+	    			//跳转至手机号登录页面
+	    		}
+	    	}
 	    }
 	}
+	
 	/**
-	 * 上传文件
+	 * 初始化微信
 	 */
-	protected function uploadCut($field,$width=200,$height=200){
-	    $check = $this->request->param('check_'.$field);
-	    $oldcheck = $this->request->param('oldcheck_'.$field);
-	    if($check != $oldcheck){
-	        $file = $this->request->file('file_'.$field);
-	        $rtnData = UploadSvc::uploadImageCut($file,config('data.uploadfolder'),$width,$height);
-	        if($rtnData['code']==1){
-	            return $rtnData['url']['t'];
-	        }else{
-	            return false;
-	        }
-	    }else{
-	        return false;
-	    }
+	protected function initOfficialAccount(){
+		$openPlatform = Factory::openPlatform(config('wechat.component'));
+		$wechat = WechatSetting::field('cid,appid,authorizer_refresh_token,authorizer_info')->find($this->getCid());
+		if($wechat){
+			$this->officialAccount = $openPlatform->officialAccount($wechat->appid, $wechat->authorizer_refresh_token);
+		}else{
+			$this->officialAccount = null;
+		}
 	}
 
 }

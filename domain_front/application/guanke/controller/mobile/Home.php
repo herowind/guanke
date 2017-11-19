@@ -14,11 +14,7 @@
 // +----------------------------------------------------------------------
 namespace app\guanke\controller\mobile;
 
-use app\mobile\controller\MobileController;
-use app\guanke\model\GuankeSchool;
-use app\guanke\model\GuankeLivecourse;
-
-class Home extends MobileController {
+class Home extends SchoolController {
 	public function initialize() {
 		parent::initialize ();
 	}
@@ -27,11 +23,6 @@ class Home extends MobileController {
 	 * 学校主页面
 	 */
 	public function index() {
-		$detail = GuankeSchool::find();
-		$this->assign('school',$detail);
-		$courseList = GuankeLivecourse::select();
-		$this->assign('courseList',$courseList);
-		$this->assign('pageTitle',$detail->name);
-		return $this->fetch ();
+		return $this->fetch();
 	}
 }
