@@ -55,7 +55,7 @@ class Setting extends WechatController
     		'appid'=> $authInfo['authorization_info']['authorizer_appid'],
     		'authorizer_info' =>json_encode($authorizer['authorizer_info'],JSON_UNESCAPED_UNICODE),
     		'component_appid' =>config('wechat.component.app_id'),
-    		'authorizer_refresh_token' =>$authInfo['authorizer_refresh_token'],
+    		'authorizer_refresh_token' =>$authInfo['authorization_info']['authorizer_refresh_token'],
     	];
     	$detail = WechatSetting::get($this->getCid());
     	if(empty($detail)){
