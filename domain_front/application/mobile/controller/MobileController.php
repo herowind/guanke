@@ -73,7 +73,7 @@ class MobileController extends MobileBaseController{
 	    		if($this->officialAccount){
 	    			//微信授权开始
 	    			$oauth = $this->officialAccount->oauth->scopes(['snsapi_userinfo']);
-	    			return $oauth->redirect('http://guanke.qyhzlm.com/mobile/passport/loginwx.html');
+	    			$oauth->redirect('http://guanke.qyhzlm.com/mobile/passport/loginwx.html')->send();
 	    		}else{
 	    			//跳转至手机号登录页面
 	    		}
