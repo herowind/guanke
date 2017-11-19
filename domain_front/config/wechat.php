@@ -18,7 +18,7 @@ return [
 						'file' => '../logs/easywechat_'.date('Ymd').'.log',
 						'level' => 'debug' 
 				],
-				'auth' => [
+				'oauth' => [
 						'scopes'   => ['snsapi_userinfo'],
 						'callback' => '/mobile/passport/loginwx',
 						
