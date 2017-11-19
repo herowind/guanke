@@ -25,8 +25,7 @@ class Livecourse extends SchoolController {
 	 * 直播课程详细页
 	 */
 	public function detail(){
-		$course_id = $this->request->param('course_id');
-		$detail = GuankeLivecourse::find($course_id);
+		$detail = GuankeLivecourse::find($this->request->param('id'));
 		$this->assign('detail',$detail);
 		return $this->fetch ();
 	}

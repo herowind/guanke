@@ -8,6 +8,9 @@ a{
   background-color: #efefef;
   height: 100%;
 }
+.ui-hide{
+	display:none;
+}
 
 .ui-line{
   height:8px;

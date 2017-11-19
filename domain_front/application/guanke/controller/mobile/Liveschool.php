@@ -25,7 +25,7 @@ class Liveschool extends SchoolController {
 	 * 监控详细页面
 	 */
 	public function detail(){
-		$detail = GuankeLiveschool::find($this->getSchoolId());
+		$detail = GuankeLiveschool::find($this->request->param('id'));
 		$this->assign('detail',$detail);
 		return $this->fetch ();
 	}
