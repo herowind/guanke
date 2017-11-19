@@ -20,7 +20,7 @@ return [
 				],
 				'oauth' => [
 						'scopes'   => ['snsapi_userinfo'],
-						'callback' => '/mobile/passport/loginwx',
+						'callback' => 'http://guanke.qyhzlm.com/mobile/passport/loginwx.html',
 						
 				],
 				'app_id' => 'wxa82d282aef3dcffa',
