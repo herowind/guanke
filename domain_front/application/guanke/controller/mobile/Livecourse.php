@@ -26,6 +26,10 @@ class Livecourse extends SchoolController {
 	 */
 	public function detail(){
 		$detail = GuankeLivecourse::find($this->request->param('id'));
+		if($detail->membervisibility == 2){
+			//关注才能看
+			$this->initMember();
+		}
 		$this->assign('detail',$detail);
 		return $this->fetch ();
 	}

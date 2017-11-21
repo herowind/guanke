@@ -20,7 +20,7 @@ return [
 				],
 				'oauth' => [
 						'scopes'   => ['snsapi_userinfo'],
-						'callback' => 'http://ke.qyhzlm.com/mobile/passport/loginwx.html',
+						'callback' => APP_SITE.'/mobile/passport/loginwx.html',
 						
 				],
 				'app_id' => 'wxa82d282aef3dcffa',
@@ -29,6 +29,12 @@ return [
 				'aes_key' => 'KXLT0BdLBTsWx637REQLUFRTOmMqPrastrGqimyMc8n' 
 				
 		],
+		
+		'oauth_userinfo' => [
+				'scopes'   => ['snsapi_userinfo'],
+				'callback' => APP_SITE.'/mobile/passport/loginwx.html',
+		],
+		
 		'website' => [
 				'name' => 'guanke',
 				'title' => '观课',

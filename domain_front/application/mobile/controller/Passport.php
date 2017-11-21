@@ -38,7 +38,8 @@ class Passport extends MobileController {
 		$this->initOfficialAccount();
 		$oauth = $this->officialAccount->oauth;
 		$lastUrl = $this->getLastUrl();
-		$member = $oauth->user();
+		$member = $oauth->user()->getOriginal();
+		
 		if($member && isset($member['openid'])){
 			$detail = UserMember::where('openid',$member['openid'])->find();
 			if(empty($detail)){

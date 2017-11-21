@@ -29,8 +29,8 @@ class UploadSvc
     public static function uploadImage($file, $subDir = 'common', $onlyThumb = false)
     {
         // 移动到框架应用根目录/uploads/ 目录下
-        $uploadPath = config('upload.fullpath') . '/' . $subDir . '/';
-        $uploadUrl = config('upload.domain') . '/' . $subDir . '/';
+        $uploadPath = APP_UPLOAD_PATH . '/' . $subDir . '/';
+        $uploadUrl = APP_UPLOAD_SITE . '/' . $subDir . '/';
         $info = $file->move($uploadPath);
         if ($info) {
 
@@ -75,8 +75,8 @@ class UploadSvc
     public static function uploadImageCut($file, $subDir = 'common', $width,$height)
     {
         // 移动到框架应用根目录/uploads/ 目录下
-        $uploadPath = config('upload.fullpath') . '/' . $subDir . '/';
-        $uploadUrl = config('upload.domain') . '/' . $subDir . '/';
+        $uploadPath = APP_UPLOAD_PATH . '/' . $subDir . '/';
+        $uploadUrl = APP_UPLOAD_SITE . '/' . $subDir . '/';
         $info = $file->move($uploadPath);
         if ($info) {
             // 上传原图
